@@ -1,0 +1,1633 @@
+/* =========================================================
+   شركة سهل نجد الاقتصادية - SAHL NAJD ECONOMIC CO.
+   بروفايل وموقع توريد وتصدير الإعاشات الغذائية والنقل المبرد
+   الهوية اللونية مستوحاة من الشعار والشاحنة المبردة (البنفسجي الملكي)
+   ========================================================= */
+
+:root {
+    /* ألوان هوية الشعار والشاحنة المبردة */
+    --purple-darkest: #1b0633;    /* البنفسجي الحبري الفاخر */
+    --purple-dark: #2c0b52;       /* بنفسجي كابينة الشاحنة */
+    --purple-main: #4a1584;       /* بنفسجي الشعار الأساسي */
+    --purple-accent: #6f26bd;     /* بنفسجي التمييز والأزرار */
+    --purple-light: #9d4edd;      /* بنفسجي فاتح للحدود */
+    --purple-tint: #f5edfc;       /* خلفية بنفسجية ناعمة جداً */
+    --purple-subtle: #ede1f7;     /* حدود ناعمة */
+
+    /* ألوان التبريد والسلامة الغذائية */
+    --cold-blue: #0284c7;
+    --cold-bg: #e0f2fe;
+    --fresh-green: #10b981;
+
+    /* ألوان النصوص والخلفيات */
+    --text-primary: #190e2b;
+    --text-secondary: #433952;
+    --text-muted: #6e647c;
+    --white: #ffffff;
+    --bg-page: #fbf9fd;
+
+    /* التأثيرات والظلال */
+    --shadow-sm: 0 2px 8px rgba(44, 11, 82, 0.06);
+    --shadow-md: 0 10px 25px -5px rgba(44, 11, 82, 0.1);
+    --shadow-lg: 0 20px 35px -8px rgba(44, 11, 82, 0.16);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* إعادة الضبط والتمرير السلس */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.7;
+    direction: rtl;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   القائمة العلوية الثابتة والقوائم المنسدلة (Navbar & Dropdowns)
+   ========================================================= */
+.main-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--purple-subtle);
+    box-shadow: 0 4px 20px rgba(44, 11, 82, 0.05);
+    transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.99);
+    box-shadow: 0 6px 25px rgba(44, 11, 82, 0.12);
+}
+
+.main-navbar.scrolled .nav-container {
+    padding: 8px 24px;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: padding 0.3s ease;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.brand-logo-frame {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(74, 21, 132, 0.15);
+    border: 2px solid var(--purple-tint);
+    overflow: hidden;
+}
+
+.brand-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-titles {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name-ar {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+}
+
+.brand-name-en {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--purple-accent);
+    letter-spacing: 1.5px;
+}
+
+/* الروابط والقوائم المنسدلة */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 6px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--purple-main);
+    background-color: var(--purple-tint);
+}
+
+.nav-link.active {
+    color: var(--purple-main) !important;
+    background-color: var(--purple-tint);
+    font-weight: 800;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    right: 12px;
+    left: 12px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple-main), var(--purple-accent));
+    border-radius: 4px;
+}
+
+.arrow-down {
+    font-size: 0.75rem;
+    transition: transform 0.25s ease;
+}
+
+/* القوائم المنسدلة */
+.has-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    min-width: 250px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--purple-subtle);
+    padding: 10px 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: var(--transition);
+    z-index: 1050;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.has-dropdown:hover .arrow-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.dropdown-menu li a:hover {
+    color: var(--purple-main);
+    background-color: var(--purple-tint);
+    padding-right: 25px;
+}
+
+/* أزرار الإجراءات */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-primary-nav {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--purple-main), var(--purple-accent));
+    color: #ffffff;
+    padding: 9px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(74, 21, 132, 0.25);
+    transition: var(--transition);
+}
+
+.btn-primary-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(74, 21, 132, 0.35);
+}
+
+.menu-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px;
+}
+
+.menu-toggle-btn span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--purple-dark);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* =========================================================
+   الواجهة الرئيسية (Hero Section) مع عرض البرادة والشاحنة
+   ========================================================= */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, var(--purple-darkest) 0%, var(--purple-dark) 55%, var(--purple-main) 100%);
+    color: #ffffff;
+    padding: 80px 0 95px;
+    overflow: hidden;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 15% 45%, rgba(157, 78, 221, 0.25) 0%, transparent 45%),
+                      radial-gradient(circle at 85% 30%, rgba(2, 132, 199, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e8d7fd;
+    margin-bottom: 20px;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #00e676;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00e676;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-subtitle {
+    font-size: 1.12rem;
+    color: #dfd5eb;
+    margin-bottom: 34px;
+    line-height: 1.75;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-hero-primary {
+    background: #ffffff;
+    color: var(--purple-dark);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hero-primary:hover {
+    background: var(--purple-tint);
+    transform: translateY(-3px);
+}
+
+.btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* بطاقة عرض شاحنة التبريد في الهيرو */
+.hero-graphic {
+    display: flex;
+    justify-content: center;
+}
+
+.truck-spotlight-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    max-width: 440px;
+    width: 100%;
+    transform: rotate(-1deg);
+    transition: var(--transition);
+}
+
+.truck-spotlight-card:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.truck-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    background: #f1f5f9;
+}
+
+.truck-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.truck-badge-float {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: rgba(44, 11, 82, 0.9);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.truck-card-caption {
+    padding: 18px 22px;
+    background: #ffffff;
+    text-align: right;
+}
+
+.truck-card-caption h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+    margin-bottom: 4px;
+}
+
+.truck-card-caption p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* =========================================================
+   شريط الأرقام والقدرة الاستيعابية
+   ========================================================= */
+.stats-bar {
+    position: relative;
+    z-index: 10;
+    margin-top: -35px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 22px 18px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--purple-subtle);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: var(--purple-main);
+    margin-bottom: 2px;
+}
+
+.stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   العناوين المشتركة للأقسام
+   ========================================================= */
+.section {
+    padding: 85px 0;
+}
+
+.section-header {
+    margin-bottom: 48px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-block;
+    background: var(--purple-tint);
+    color: var(--purple-main);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    border: 1px solid var(--purple-subtle);
+}
+
+.section-heading {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+    margin-bottom: 12px;
+}
+
+.header-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--purple-main), var(--purple-accent));
+    margin: 0 auto 16px;
+    border-radius: 2px;
+}
+
+.section-description {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   قسم نبذة عن الشركة ومزايا التوريد
+   ========================================================= */
+.about-overview-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 36px;
+    background: #ffffff;
+    border: 1px solid var(--purple-subtle);
+    border-radius: var(--radius-lg);
+    padding: 38px 40px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 40px;
+}
+
+.about-text-box h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+    margin-bottom: 16px;
+}
+
+.about-text-box p {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.about-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+
+.about-feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--purple-tint);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--purple-subtle);
+}
+
+.feat-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.about-feat-item h4 {
+    font-size: 0.96rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+    margin-bottom: 4px;
+}
+
+.about-feat-item p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* بطاقات الرؤية والرسالة */
+.pillars-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.pillar-box {
+    background: #ffffff;
+    border: 1px solid var(--purple-subtle);
+    border-radius: var(--radius-md);
+    padding: 30px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.pillar-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--purple-light);
+}
+
+.active-pillar {
+    background: linear-gradient(180deg, #ffffff 0%, var(--purple-tint) 100%);
+    border-color: var(--purple-light);
+}
+
+.pillar-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: var(--purple-tint);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin: 0 auto 16px;
+    border: 1px solid var(--purple-subtle);
+}
+
+.pillar-box h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+    margin-bottom: 10px;
+}
+
+.pillar-box p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+/* =========================================================
+   قسم أسطول النقل المبرد والبرادات (Fleet Section)
+   ========================================================= */
+.fleet-section {
+    background-color: #f6f0fb;
+}
+
+.fleet-showcase-card {
+    background: linear-gradient(135deg, var(--purple-darkest), var(--purple-dark));
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: var(--shadow-lg);
+}
+
+.fleet-image-col {
+    position: relative;
+    min-height: 380px;
+}
+
+.fleet-full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fleet-details-col {
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-tag-light {
+    display: inline-block;
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #e8d7fd;
+    margin-bottom: 14px;
+}
+
+.fleet-details-col h2 {
+    font-size: 1.95rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.35;
+}
+
+.fleet-details-col p {
+    font-size: 0.98rem;
+    color: #d8cde6;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.fleet-specs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fleet-specs-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: #ede5f7;
+}
+
+.spec-check {
+    background: var(--cold-blue);
+    color: #ffffff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* =========================================================
+   قسم المنتجات والإعاشات الغذائية (Product Cards & Dropdowns)
+   ========================================================= */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid var(--purple-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--purple-accent);
+}
+
+.product-img-box {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    background: #eee;
+    overflow: hidden;
+}
+
+.img-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.product-img-box img,
+.img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img-box img,
+.product-card:hover .img-link img {
+    transform: scale(1.05);
+}
+
+.prod-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.prod-badge.cold {
+    background: #0284c7;
+    color: #ffffff;
+}
+
+.prod-badge.dairy {
+    background: #f59e0b;
+    color: #ffffff;
+}
+
+.prod-badge.dry {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.prod-badge.bulk {
+    background: var(--purple-main);
+    color: #ffffff;
+}
+
+.product-content {
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-content h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+    margin-bottom: 8px;
+}
+
+.prod-brief {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* تفاصيل منسدلة داخل بطاقة المنتج */
+.prod-dropdown {
+    margin-top: auto;
+    border-top: 1px dashed var(--purple-subtle);
+    padding-top: 12px;
+}
+
+.prod-dropdown summary {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--purple-main);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.prod-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.prod-dropdown summary span {
+    transition: transform 0.25s ease;
+}
+
+.prod-dropdown[open] summary span {
+    transform: rotate(180deg);
+}
+
+.prod-dropdown-content {
+    padding-top: 12px;
+    animation: fadeIn 0.25s ease;
+}
+
+.prod-dropdown-content ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+.prod-dropdown-content li {
+    position: relative;
+    padding-right: 18px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.prod-dropdown-content li::before {
+    content: "•";
+    position: absolute;
+    right: 4px;
+    color: var(--purple-accent);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* =========================================================
+   قسم: مع مَن نتعامل؟ (Who We Deal With - Clients & Sectors)
+   ========================================================= */
+.clients-section {
+    background-color: #ffffff;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.client-sector-card {
+    background: #fdfcfe;
+    border: 1px solid var(--purple-subtle);
+    border-radius: var(--radius-md);
+    padding: 28px 24px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.client-sector-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--purple-light);
+    background: #ffffff;
+}
+
+.sector-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--purple-tint);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    border: 1px solid var(--purple-subtle);
+}
+
+.client-sector-card h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+    margin-bottom: 10px;
+}
+
+.sector-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.sector-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-top: 1px solid var(--purple-subtle);
+    padding-top: 14px;
+}
+
+.sector-tags span {
+    background: var(--purple-tint);
+    color: var(--purple-main);
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+/* =========================================================
+   قسم معايير الجودة والتفاصيل المنسدلة (Quality Accordion)
+   ========================================================= */
+.specs-section {
+    background-color: #faf6fd;
+}
+
+.quality-accordion-list {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.quality-item {
+    background: #ffffff;
+    border: 1px solid var(--purple-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.quality-item[open] {
+    box-shadow: var(--shadow-md);
+    border-color: var(--purple-accent);
+}
+
+.quality-summary {
+    list-style: none;
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.quality-summary::-webkit-details-marker {
+    display: none;
+}
+
+.q-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.q-icon {
+    font-size: 1.3rem;
+}
+
+.q-title h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+}
+
+.chevron-q {
+    font-size: 0.95rem;
+    color: var(--purple-main);
+    transition: transform 0.25s ease;
+}
+
+.quality-item[open] .chevron-q {
+    transform: rotate(180deg);
+}
+
+.quality-body {
+    padding: 0 24px 22px 24px;
+    border-top: 1px solid var(--purple-tint);
+    font-size: 0.94rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    animation: fadeIn 0.25s ease;
+}
+
+/* =========================================================
+   قسم معلومات التواصل (Contact Section)
+   ========================================================= */
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.contact-info-card {
+    background: #ffffff;
+    border: 1px solid var(--purple-subtle);
+    border-radius: var(--radius-md);
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.contact-info-card:hover {
+    border-color: var(--purple-main);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--purple-tint);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    border: 1px solid var(--purple-subtle);
+}
+
+.info-details h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+    margin-bottom: 6px;
+}
+
+.info-details p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+}
+
+/* =========================================================
+   الفوتر (Footer)
+   ========================================================= */
+.main-footer {
+    background-color: var(--purple-darkest);
+    color: #ffffff;
+    padding-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.footer-logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 2px;
+}
+
+.footer-logo-row h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.footer-logo-row span {
+    font-size: 0.7rem;
+    color: #c9b3e6;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.footer-about {
+    font-size: 0.9rem;
+    color: #b7a6cb;
+    max-width: 380px;
+    line-height: 1.6;
+}
+
+.footer-nav h4, .footer-services h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.footer-nav ul, .footer-services ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav a, .footer-services a {
+    color: #b7a6cb;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: var(--transition);
+}
+
+.footer-nav a:hover, .footer-services a:hover {
+    color: #ffffff;
+    padding-right: 6px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: #9f8bb8;
+}
+
+.en-copy {
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   طبقة التعتيم وتأثير زر القائمة (Mobile Backdrop & Hamburger Animation)
+   ========================================================= */
+.nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 6, 38, 0.65);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 995;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-toggle-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================================
+   ملاءمة الشاشات المتنقلة والأجهزة اللوحية (Comprehensive Multi-Device Responsive)
+   ========================================================= */
+
+/* أجهزة اللابتوب والشاشات المتوسطة (Tablets Landscape & Laptops) */
+@media (max-width: 1100px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 2.3rem;
+    }
+
+    .products-grid {
+        gap: 18px;
+    }
+
+    .clients-grid {
+        gap: 16px;
+    }
+}
+
+/* الأجهزة اللوحية والآيباد (Tablets & iPads <= 992px) */
+@media (max-width: 992px) {
+    .menu-toggle-btn {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 85vw);
+        height: 100vh;
+        height: 100dvh;
+        background: #ffffff;
+        box-shadow: -8px 0 30px rgba(27, 6, 51, 0.25);
+        padding: 85px 22px 30px 22px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+    }
+
+    .nav-menu.open {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: space-between;
+        padding: 13px 16px;
+        font-size: 1rem;
+        border-radius: var(--radius-sm);
+    }
+
+    .nav-link.active::after {
+        display: none;
+    }
+
+    .nav-link.active {
+        border-right: 4px solid var(--purple-main);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .has-dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: 1px solid var(--purple-subtle);
+        background-color: var(--purple-tint);
+        padding: 6px 0;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        border-radius: var(--radius-sm);
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        width: 100%;
+    }
+
+    .has-dropdown.dropdown-open .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.25s ease;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 36px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-cta-group {
+        justify-content: center;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .about-overview-grid {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+    }
+
+    .pillars-container {
+        grid-template-columns: 1fr;
+    }
+
+    .fleet-showcase-card {
+        grid-template-columns: 1fr;
+    }
+
+    .fleet-image-col {
+        min-height: 280px;
+    }
+
+    .fleet-details-col {
+        padding: 32px 26px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .bottom-content {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+/* شاشات الهواتف الذكية والأجهزة الصغيرة (Mobiles <= 768px) */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 36px;
+    }
+
+    .section-heading {
+        font-size: 1.75rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-section {
+        padding: 60px 0 75px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.35;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 26px;
+    }
+
+    .truck-spotlight-card {
+        max-width: 100%;
+        transform: none;
+    }
+
+    .truck-spotlight-card:hover {
+        transform: none;
+    }
+
+    .truck-img-wrapper {
+        height: 240px;
+    }
+
+    .stats-bar {
+        margin-top: -20px;
+    }
+
+    .stat-card {
+        padding: 16px 12px;
+    }
+
+    .stat-number {
+        font-size: 1.45rem;
+    }
+
+    .stat-label {
+        font-size: 0.78rem;
+    }
+
+    .fleet-full-img {
+        max-height: 300px;
+    }
+
+    .fleet-details-col h2 {
+        font-size: 1.6rem;
+    }
+
+    .quality-summary {
+        padding: 16px 18px;
+    }
+
+    .quality-body {
+        padding: 0 18px 18px 18px;
+    }
+}
+
+/* الهواتف الذكية المحمولة المدمجة (Smartphones <= 520px) */
+@media (max-width: 520px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .nav-container {
+        padding: 10px 16px;
+    }
+
+    .brand-logo-frame {
+        width: 44px;
+        height: 44px;
+    }
+
+    .brand-name-ar {
+        font-size: 1rem;
+    }
+
+    .brand-name-en {
+        font-size: 0.58rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-title {
+        font-size: 1.7rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .hero-cta-group .btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-img-box {
+        height: 190px;
+    }
+
+    .clients-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .client-sector-card {
+        padding: 22px 18px;
+    }
+
+    .contact-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-card {
+        padding: 20px 16px;
+    }
+
+    .about-overview-grid {
+        padding: 22px 16px;
+    }
+
+    .fleet-details-col {
+        padding: 24px 16px;
+    }
+
+    .fleet-specs-list li {
+        font-size: 0.88rem;
+    }
+
+    .footer-logo-row h3 {
+        font-size: 1.05rem;
+    }
+}
+
+/* أصغر مقاسات الهواتف (Small phones <= 360px: iPhone SE / Fold) */
+@media (max-width: 360px) {
+    .brand-name-ar {
+        font-size: 0.9rem;
+    }
+
+    .brand-titles {
+        max-width: 170px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 14px 10px;
+    }
+}
+

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة سهل نجد الاقتصادية | توريد وتصدير إعاشات غذائية ونقل مبرد</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- استدعاء خط تجوال العربي الاحترافي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- القائمة العلوية الثابتة مع القوائم المنسدلة -->
+    <header class="main-navbar">
+        <div class="nav-container">
+            <!-- الشعار واسم الشركة -->
+            <a href="#hero" class="nav-brand">
+                <div class="brand-logo-frame">
+                    <!-- رابط صورة الشعار المباشر -->
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Ccircle cx='150' cy='150' r='144' fill='%23ffffff' stroke='%233a1065' stroke-width='6'/%3E%3Ccircle cx='150' cy='150' r='116' fill='%234a1584'/%3E%3Cpath d='M110 195 L145 105 L155 105 L190 195 L172 195 L150 138 L128 195 Z' fill='%23ffffff'/%3E%3Cpath d='M70 170 Q145 220 230 115 Q170 168 70 170 Z' fill='%23ffffff'/%3E%3Ctext x='150' y='52' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='14' fill='%233a1065'%3Eشركة سهل نجد الاقتصادية%3C/text%3E%3Ctext x='150' y='265' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='10' fill='%233a1065'%3ESAHL NAJD ECONOMIC CO.%3C/text%3E%3C/svg%3E" 
+                         alt="شعار شركة سهل نجد الاقتصادية" 
+                         class="brand-logo"
+                         onerror="this.src='logo.jpg'">
+                </div>
+                <div class="brand-titles">
+                    <span class="brand-name-ar">شركة سهل نجد الاقتصادية</span>
+                    <span class="brand-name-en">SAHL NAJD ECONOMIC CO.</span>
+                </div>
+            </a>
+
+            <!-- روابط التنقل والقوائم المنسدلة -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#hero" class="nav-link active">الرئيسية</a>
+                    </li>
+
+                    <!-- قائمة منسدلة: عن الشركة -->
+                    <li class="nav-item has-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            عن الشركة
+                            <span class="arrow-down">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#about">نبذة عن الشركة</a></li>
+                            <li><a href="#fleet">أسطول النقل المبرد</a></li>
+                            <li><a href="#vision-mission">الرؤية والرسالة</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- قائمة منسدلة: المنتجات والإعاشات -->
+                    <li class="nav-item has-dropdown">
+                        <a href="#products" class="nav-link dropdown-toggle">
+                            منتجاتنا الغذائية
+                            <span class="arrow-down">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#meat">اللحوم المبردة والمجمدة</a></li>
+                            <li><a href="#poultry">الدواجن المبردة والمجمدة</a></li>
+                            <li><a href="#dairy">الأجبان والألبان</a></li>
+                            <li><a href="#pasta">المكرونة والبقوليات</a></li>
+                            <li><a href="#sugar">السكر والمواد التموينية</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- قائمة منسدلة: مع مين نتعامل -->
+                    <li class="nav-item has-dropdown">
+                        <a href="#clients" class="nav-link dropdown-toggle">
+                            مع مَن نتعامل؟
+                            <span class="arrow-down">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#clients">شركات الإعاشة والتموين</a></li>
+                            <li><a href="#clients">المشاريع والقطاعات الحكومية</a></li>
+                            <li><a href="#clients">الفنادق وسلاسل المطاعم</a></li>
+                            <li><a href="#clients">المستشفيات والمراكز الطبية</a></li>
+                            <li><a href="#clients">أسواق التجزئة والجملة</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#specifications" class="nav-link">معايير الجودة</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">تواصل معنا</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- زر قائمة الجوال -->
+            <div class="nav-actions">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="فتح القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- طبقة التعتيم الخلفية عند فتح القائمة في الجوال -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <!-- الواجهة الرئيسية (Hero Section) مع صورة الشاحنة المبردة -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>توريد وتصدير إعاشات غذائية • نقل مبرد متطور</span>
+                </div>
+                <h1 class="hero-title">
+                    رواد توريد الإعاشات والمواد الغذائية والنقل المبرد في المملكة
+                </h1>
+                <p class="hero-subtitle">
+                    متخصصون في توريد وتصدير الإعاشات الغذائية المتكاملة: <strong>اللحوم المبردة، الدواجن، المكرونة، السكر، الأجبان، والمواد التموينية</strong> بأعلى معايير السلامة الغذائية عبر أسطول برادات نقل حديث ومجهز بأحدث أنظمة التبريد.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#products" class="btn btn-hero-primary">استعراض المنتجات الغذائية</a>
+                    <a href="#fleet" class="btn btn-hero-secondary">أسطول البرادات المجهزة</a>
+                </div>
+            </div>
+
+            <!-- عرض البرادة المبردة الرسمية للشركة في الواجهة -->
+            <div class="hero-graphic">
+                <div class="truck-spotlight-card">
+                    <div class="truck-img-wrapper">
+                        <!-- رابط صورة شاحنة البرادة المباشر -->
+                        <a href="https://media.discordapp.net/attachments/1314923050323673172/1553421761230676068/d49f50100c1e048a.jpg?ex=6ac3bc41&is=6ac26ac1&hm=2826ab337c55199a82c0908ed05c0f9c608de80f5e18085ff5e91a95f368c5f3&=&format=webp&width=893&height=856" target="_blank" class="img-link" title="فتح صورة البرادة في رابط مستقل">
+                            <img src="https://media.discordapp.net/attachments/1314923050323673172/1553421761230676068/d49f50100c1e048a.jpg?ex=6ac3bc41&is=6ac26ac1&hm=2826ab337c55199a82c0908ed05c0f9c608de80f5e18085ff5e91a95f368c5f3&=&format=webp&width=893&height=856" 
+                                 alt="برادة شركة سهل نجد الاقتصادية - نقل مبرد" 
+                                 class="truck-hero-img"
+                                 onerror="this.src='truck.jpg'">
+                        </a>
+                        <div class="truck-badge-float">
+                            <span>❄️ أسطول نقل مبرد معتمد</span>
+                        </div>
+                    </div>
+                    <div class="truck-card-caption">
+                        <h4>شاحنات نقل مبردة Thermo King</h4>
+                        <p>تضمن وصول الإعاشات واللحوم والدواجن طازجة بأعلى درجات الجودة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- شريط الإحصائيات وسرعة التوريد -->
+    <section class="stats-bar">
+        <div class="container stats-container">
+            <div class="stat-card">
+                <span class="stat-icon">🥩</span>
+                <span class="stat-number">+1000</span>
+                <span class="stat-label">طن شهرياً من الإعاشات والمواد التموينية</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">🚛</span>
+                <span class="stat-number">100%</span>
+                <span class="stat-label">أسطول برادات مجهز بوحدات تبريد وتجميد</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">🤝</span>
+                <span class="stat-number">+80</span>
+                <span class="stat-label">شريك وجهة تعاقد في قطاع الإعاشة والتموين</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">📍</span>
+                <span class="stat-number">تغطية شاملة</span>
+                <span class="stat-label">لكافة مناطق ومدن المملكة العربية السعودية</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم نبذة عن الشركة (About Section) -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">نبذة عن الشركة</span>
+                <h2 class="section-heading">شركة سهل نجد الاقتصادية</h2>
+                <div class="header-line"></div>
+                <p class="section-description">
+                    شريككم الاستراتيجي الأول في قطاع توريد وتصدير الإعاشات الغذائية والتموين اللوجستي المبرد
+                </p>
+            </div>
+
+            <div class="about-overview-grid">
+                <div class="about-text-box">
+                    <h3>خبرة عريضة في سلاسل الإمداد الغذائي والإعاشة</h3>
+                    <p>
+                        تعد <strong>شركة سهل نجد الاقتصادية</strong> من الشركات الوطنية المتخصصة والرائدة في مجال <strong>توريد وتصدير المواد الغذائية والإعاشات</strong> لقطاعات الأعمال والجهات الكبرى. نمتلك القدرة والجاهزية لتلبية أكبر عقود التوريد التموينية من اللحوم المبردة، الدواجن الطازجة والمجمدة، الأجبان ومنتجات الألبان، والسكر، والمكرونات، وكافة الأصناف الغذائية الأساسية.
+                    </p>
+                    <p>
+                        نعتمد على معايير فحص واشتراطات صحية صارمة متوافقة مع متطلبات <strong>الهيئة العامة للغذاء والدواء (SFDA)</strong>، ونوفر حلول نقل مبرد تحفظ القيمة الغذائية والنضارة من المصدر وحتى موقع التسليم.
+                    </p>
+                </div>
+
+                <div class="about-features-list">
+                    <div class="about-feat-item">
+                        <span class="feat-icon">❄️</span>
+                        <div>
+                            <h4>سلسلة تبريد غير منقطعة (Cold Chain)</h4>
+                            <p>مراقبة مستمرة لدرجات الحرارة لضمان سلامة اللحوم والدواجن والأجبان.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feat-item">
+                        <span class="feat-icon">📦</span>
+                        <div>
+                            <h4>قدرة استيعابية وتوريد كميات ضخمة</h4>
+                            <p>جاهزية تامة لتلبية احتياجات الإعاشة لمشاريع المملكة الكبرى والمخيمات.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feat-item">
+                        <span class="feat-icon">⚡</span>
+                        <div>
+                            <h4>التزام بمواعيد التوريد الدورية</h4>
+                            <p>جداول توريد مرنة ويومية تضمن عدم انقطاع المخزون التشغيلي لدى شركائنا.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقات الرؤية والرسالة والقيم -->
+            <div class="pillars-container" id="vision-mission">
+                <div class="pillar-box">
+                    <div class="pillar-icon-wrap">🎯</div>
+                    <h3>رؤيتنا</h3>
+                    <p>أن نكون الكيان الأبرز والأكثر ثقة في المملكة بمجال استيراد وتصدير وتوريد الإعاشات الغذائية والخدمات اللوجستية المبردة لقطاع الأعمال والإعاشة.</p>
+                </div>
+
+                <div class="pillar-box active-pillar">
+                    <div class="pillar-icon-wrap">🚀</div>
+                    <h3>رسالتنا</h3>
+                    <p>توفير أجود المنتجات الغذائية والتموينية بأسعار تنافسية وحلول نقل مبردة متطورة، لدعم استمرارية وكفاءة عمليات شركائنا في مختلف القطاعات.</p>
+                </div>
+
+                <div class="pillar-box">
+                    <div class="pillar-icon-wrap">💎</div>
+                    <h3>قيمنا</h3>
+                    <p>الجودة والأمان الغذائي أولاً، الشفافية والمصداقية في التوريد، الالتزام التام بالاتفاقيات، والحرص على بناء شراكات استراتيجية طويلة الأمد.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم أسطول النقل المبرد والبرادات (Refrigerated Fleet Spotlight) -->
+    <section class="section fleet-section" id="fleet">
+        <div class="container">
+            <div class="fleet-showcase-card">
+                <div class="fleet-image-col">
+                    <!-- رابط صورة الشاحنة المبردة -->
+                    <a href="https://media.discordapp.net/attachments/1314923050323673172/1553421761230676068/d49f50100c1e048a.jpg?ex=6ac3bc41&is=6ac26ac1&hm=2826ab337c55199a82c0908ed05c0f9c608de80f5e18085ff5e91a95f368c5f3&=&format=webp&width=893&height=856" target="_blank" class="img-link" title="فتح صورة الشاحنة في رابط مستقل">
+                        <img src="https://media.discordapp.net/attachments/1314923050323673172/1553421761230676068/d49f50100c1e048a.jpg?ex=6ac3bc41&is=6ac26ac1&hm=2826ab337c55199a82c0908ed05c0f9c608de80f5e18085ff5e91a95f368c5f3&=&format=webp&width=893&height=856" 
+                             alt="شاحنات التبريد - شركة سهل نجد الاقتصادية" 
+                             class="fleet-full-img"
+                             onerror="this.src='truck.jpg'">
+                    </a>
+                </div>
+                <div class="fleet-details-col">
+                    <span class="section-tag-light">أسطول سهل نجد المعتمد</span>
+                    <h2>برادات وشاحنات نقل مبرد ومجمد متطورة</h2>
+                    <p>
+                        تمتلك الشركة أسطولاً مجهزاً بأحدث شاحنات التبريد (Mercedes-Benz Actros) المزودة بوحدات تبريد عالمية <strong>Thermo King</strong> تضمن الحفاظ على درجات حرارة مثالية للسلع الغذائية المبردة والمجمدة:
+                    </p>
+                    <ul class="fleet-specs-list">
+                        <li>
+                            <span class="spec-check">✓</span>
+                            <span><strong>نطاقات حرارية دقيقة:</strong> تبريد (+4°م) للحوم والدواجن المبردة والأجبان، وتجميد (-18°م) للمجمدات.</span>
+                        </li>
+                        <li>
+                            <span class="spec-check">✓</span>
+                            <span><strong>أنظمة تتبع ومراقبة حرارية رقمية:</strong> تسجيل مستمر لدرجات الحرارة طوال مسار الشحنة.</span>
+                        </li>
+                        <li>
+                            <span class="spec-check">✓</span>
+                            <span><strong>صناديق نقل معقمة وعازلة:</strong> أسطح داخلية مطابقة لأعلى مواصفات النظافة وسلامة الأغذية.</span>
+                        </li>
+                        <li>
+                            <span class="spec-check">✓</span>
+                            <span><strong>سائقون وكوادر مدربة:</strong> على أسس مناولة وتفريغ المنتجات الغذائية بحرفية تامة.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات والإعاشات الغذائية مع صور احترافية وتفاصيل منسدلة -->
+    <section class="section products-section" id="products">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">أصناف الإعاشات والتوريد</span>
+                <h2 class="section-heading">منتجاتنا وإعاشاتنا الغذائية</h2>
+                <div class="header-line"></div>
+                <p class="section-description">
+                    نوفر باقة متكاملة من الأصناف الغذائية المبردة والجافة بأعلى مواصفات الجودة المعتمدة
+                </p>
+            </div>
+
+            <!-- شبكة بطاقات المنتجات مع الصور والتفاصيل المنسدلة -->
+            <div class="products-grid">
+
+                <!-- 1. لحوم مبردة -->
+                <div class="product-card" id="meat">
+                    <div class="product-img-box">
+                        <a href="https://images.unsplash.com/photo-1448907503123-67254d59ca4f?auto=format&fit=crop&w=1200&q=80" target="_blank" class="img-link" title="عرض صورة اللحوم المبردة برابط مباشر">
+                            <img src="https://images.unsplash.com/photo-1448907503123-67254d59ca4f?auto=format&fit=crop&w=700&q=80" alt="لحوم مبردة ومجمدة" loading="lazy">
+                        </a>
+                        <span class="prod-badge cold">تبريد وتجميد ❄️</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>اللحوم المبردة والمجمدة</h3>
+                        <p class="prod-brief">لحوم طازجة مذبوحة وفق الشريعة الإسلامية ومبردة بدرجات حرارة مثالية.</p>
+                        
+                        <!-- تفاصيل منسدلة خاصة بالمنتج -->
+                        <details class="prod-dropdown">
+                            <summary>عرض تفاصيل الصنف والأوزان <span>▾</span></summary>
+                            <div class="prod-dropdown-content">
+                                <ul>
+                                    <li>لحوم ضأن وأبقار وعجول مبردة ومجمدة.</li>
+                                    <li>تقطيع وتغليف حسب طلب العميل ودفاتر الشروط.</li>
+                                    <li>شهادات صحية وشهادات حلال معتمدة دولياً.</li>
+                                    <li>توريد يومي وأسبوعي لشركات الإعاشة والمطابخ المركزية.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 2. دجاج مبرد ومجمد -->
+                <div class="product-card" id="poultry">
+                    <div class="product-img-box">
+                        <a href="https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=1200&q=80" target="_blank" class="img-link" title="عرض صورة الدواجن برابط مباشر">
+                            <img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=700&q=80" alt="دجاج مبرد ومجمد" loading="lazy">
+                        </a>
+                        <span class="prod-badge cold">دواجن طازجة 🍗</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>الدجاج المبرد والمجمد</h3>
+                        <p class="prod-brief">دواجن عالية الجودة من كبرى المسالخ المعتمدة محلياً ومستوردة وفق الشروط.</p>
+                        
+                        <!-- تفاصيل منسدلة -->
+                        <details class="prod-dropdown">
+                            <summary>عرض تفاصيل الصنف والأوزان <span>▾</span></summary>
+                            <div class="prod-dropdown-content">
+                                <ul>
+                                    <li>دجاج كامل مبرد ومجمد بمختلف الأوزان (800 إلى 1300 جم).</li>
+                                    <li>مقطعات دجاج: صدور فيليه، أفخاذ، أجنحة، وشيش طاووق.</li>
+                                    <li>تعبئة مخصصة لقطاع الإعاشة والفنادق والمطاعم.</li>
+                                    <li>نقل وتوريد فوري داخل سيارات البرادات المجهزة.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 3. الأجبان ومنتجات الألبان -->
+                <div class="product-card" id="dairy">
+                    <div class="product-img-box">
+                        <a href="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=1200&q=80" target="_blank" class="img-link" title="عرض صورة الأجبان برابط مباشر">
+                            <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=700&q=80" alt="أجبان ومنتجات ألبان" loading="lazy">
+                        </a>
+                        <span class="prod-badge dairy">أجبان وألبان 🧀</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>الأجبان ومنتجات الألبان</h3>
+                        <p class="prod-brief">تشكيلة واسعة من الأجبان الطبيعية والمطبوخة المناسبة للإفطار والإعاشة.</p>
+                        
+                        <!-- تفاصيل منسدلة -->
+                        <details class="prod-dropdown">
+                            <summary>عرض أنواع الأجبان المتاحة <span>▾</span></summary>
+                            <div class="prod-dropdown-content">
+                                <ul>
+                                    <li>أجبان شيدر، فيتا، موزاريلا، قشقوان، وحلوم.</li>
+                                    <li>جبن سائل ومثلثات وشرائح للبرجر والساندويتشات.</li>
+                                    <li>ألبان وزبادي وقشطة وكرتونات خاصة بالإعاشة الجماعية.</li>
+                                    <li>حفظ ونقل في بيئة مبردة بدرجة 4°م مئوية.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 4. المكرونة بأنواعها والبقوليات -->
+                <div class="product-card" id="pasta">
+                    <div class="product-img-box">
+                        <a href="https://images.unsplash.com/photo-1551462147-1c15e4852bbf?auto=format&fit=crop&w=1200&q=80" target="_blank" class="img-link" title="عرض صورة المكرونة برابط مباشر">
+                            <img src="https://images.unsplash.com/photo-1551462147-1c15e4852bbf?auto=format&fit=crop&w=700&q=80" alt="مكرونة ومعكرونات متنوعة" loading="lazy">
+                        </a>
+                        <span class="prod-badge dry">مواد تموينية 🍝</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>المكرونة والمعكرونات بأنواعها</h3>
+                        <p class="prod-brief">معكرونة فاخرة مصنوعة من سميد القمح الصلب بأشكال وأحجام متعددة.</p>
+                        
+                        <!-- تفاصيل منسدلة -->
+                        <details class="prod-dropdown">
+                            <summary>عرض الأشكال والعبوات <span>▾</span></summary>
+                            <div class="prod-dropdown-content">
+                                <ul>
+                                    <li>مكرونة سباغيتي، قلم، خواتم، فيوسيلي، وشعيرية.</li>
+                                    <li>عبوات اقتصادية خاصة بالإعاشة (شوالات وأكياس 5 و 10 كجم).</li>
+                                    <li>أصناف محلية وعالمية عالية التحمل أثناء الطهي الجماعي.</li>
+                                    <li>تخزين وتوريد في مستودعات جافة ومعقمة ومطابقة للمواصفات.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 5. السكر والمواد التموينية الأساسية -->
+                <div class="product-card" id="sugar">
+                    <div class="product-img-box">
+                        <a href="https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=1200&q=80" target="_blank" class="img-link" title="عرض صورة السكر برابط مباشر">
+                            <img src="https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=700&q=80" alt="سكر ومواد تموينية أساسية" loading="lazy">
+                        </a>
+                        <span class="prod-badge dry">سكر وتموين 🍚</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>السكر والمواد الأساسية</h3>
+                        <p class="prod-brief">سكر أبيض نقي مكرر عالي الجودة وعبوات تموينية ضخمة لتلبية طلبات التوريد.</p>
+                        
+                        <!-- تفاصيل منسدلة -->
+                        <details class="prod-dropdown">
+                            <summary>عرض تفاصيل التعبئة <span>▾</span></summary>
+                            <div class="prod-dropdown-content">
+                                <ul>
+                                    <li>سكر ناعم وخشن أكياس 50 كجم، 10 كجم، وعبوات التجزئة.</li>
+                                    <li>أرز بسمتي ومزة حبة طويلة بأجود الماركات المعتمدة.</li>
+                                    <li>زيوت طعام، معجون طماطم، طحين، وملح طعام معالج.</li>
+                                    <li>قدرة على توريد شحنات شهرية منتظمة ومستمرة.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 6. إعاشات ومؤن متكاملة -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <a href="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1200&q=80" target="_blank" class="img-link" title="عرض صورة سلال الإعاشة برابط مباشر">
+                            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=700&q=80" alt="إعاشات ومؤن غذائية متكاملة" loading="lazy">
+                        </a>
+                        <span class="prod-badge bulk">عقود إعاشة 🛒</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>عقود الإعاشة وسلال التموين</h3>
+                        <p class="prod-brief">تجهيز وتوريد سلل غذائية وحصص تموينية متكاملة للشركات والجهات الحكومية.</p>
+                        
+                        <!-- تفاصيل منسدلة -->
+                        <details class="prod-dropdown">
+                            <summary>عرض تفاصيل التجهيز <span>▾</span></summary>
+                            <div class="prod-dropdown-content">
+                                <ul>
+                                    <li>تأمين المقررات الشهرية لمخيمات وسكن العمال والمشاريع.</li>
+                                    <li>تجهيز وجبات جافة ومؤن طوارئ وحصص إعاشة متوازنة.</li>
+                                    <li>إمكانية التخصيص الكامل حسب اشتراطات كل قطاع أو عميل.</li>
+                                    <li>عقود توريد سنوية وشهرية بدفعات ميسرة ومرنة.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم: مع مَن نتعامل؟ (Who We Deal With - Clients & Sectors) -->
+    <section class="section clients-section" id="clients">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">عملاؤنا والقطاعات الشريكة</span>
+                <h2 class="section-heading">مع مَن نتعامل في سهل نجد؟</h2>
+                <div class="header-line"></div>
+                <p class="section-description">
+                    نفخر بخدمة قطاعات حيوية واسعة تعتمد على دقة التوريد وجودة الإعاشات الغذائية
+                </p>
+            </div>
+
+            <!-- قائمة القطاعات التي نتعامل معها مع تفاصيل منسدلة -->
+            <div class="clients-grid">
+
+                <div class="client-sector-card">
+                    <div class="sector-icon">⛺</div>
+                    <h3>شركات الإعاشة والتموين الكبرى</h3>
+                    <p class="sector-desc">
+                        المتعهدة بتموين مخيمات المشاريع التنموية، مشاريع نيوم، البحر الأحمر، والمدن الصناعية وسكن العمال ومواقع التعدين.
+                    </p>
+                    <div class="sector-tags">
+                        <span>لحوم ودواجن يومية</span>
+                        <span>مؤن جافة</span>
+                        <span>أجبان وتموين</span>
+                    </div>
+                </div>
+
+                <div class="client-sector-card">
+                    <div class="sector-icon">🏛️</div>
+                    <h3>القطاعات الحكومية وشبه الحكومية</h3>
+                    <p class="sector-desc">
+                        تلبية المناقصات وعقود التوريد التمويني الرسمية للأجهزة والمؤسسات والمشاريع الوطنية الكبرى بأعلى درجات الالتزام.
+                    </p>
+                    <div class="sector-tags">
+                        <span>مناقصات معتمدة</span>
+                        <span>توريد دوري</span>
+                        <span>معايير قياسية</span>
+                    </div>
+                </div>
+
+                <div class="client-sector-card">
+                    <div class="sector-icon">🏨</div>
+                    <h3>الفنادق والمنتجعات وسلاسل المطاعم</h3>
+                    <p class="sector-desc">
+                        قطاع الضيافة والمطاعم (HORECA) الذي يشترط نضارة اللحوم والدواجن والأجبان يومياً للحفاظ على رضا روادهم.
+                    </p>
+                    <div class="sector-tags">
+                        <span>تقطيع مخصص</span>
+                        <span>نقل مبرد يومي</span>
+                        <span>جودة ممتازة</span>
+                    </div>
+                </div>
+
+                <div class="client-sector-card">
+                    <div class="sector-icon">🏥</div>
+                    <h3>المستشفيات والمدن الطبية</h3>
+                    <p class="sector-desc">
+                        توريد المواد الغذائية والوجبات التموينية للمطابخ المركزية بالمستشفيات وفق معايير فحص وسلامة صحية فائقة الدقة.
+                    </p>
+                    <div class="sector-tags">
+                        <span>فحص غذائي دقيق</span>
+                        <span>أصناف صحية</span>
+                        <span>سلسلة تبريد معقمة</span>
+                    </div>
+                </div>
+
+                <div class="client-sector-card">
+                    <div class="sector-icon">🏬</div>
+                    <h3>سلاسل الهايبرماركت وموزعو الجملة</h3>
+                    <p class="sector-desc">
+                        إمداد أسواق التجزئة والجملة بعبوات المكرونة، السكر، الزيوت، والأجبان بأسعار جملة تنافسية تضمن هامش ربح ممتاز.
+                    </p>
+                    <div class="sector-tags">
+                        <span>أسعار جملة</span>
+                        <span>كميات كبيرة</span>
+                        <span>توزيع مباشر</span>
+                    </div>
+                </div>
+
+                <div class="client-sector-card">
+                    <div class="sector-icon">🚢</div>
+                    <h3>شركات الملاحة والتموين البحري والجوي</h3>
+                    <p class="sector-desc">
+                        تزويد البواخر، المنصات البحرية، وخطوط الطيران بحصص الإعاشة الغذائية المبردة والجافة اللازمة للرحلات الطويلة.
+                    </p>
+                    <div class="sector-tags">
+                        <span>إعاشة سفر</span>
+                        <span>تغليف محكم</span>
+                        <span>جاهزية لوجستية</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم معايير الجودة والتفاصيل المنسدلة (Quality & Compliance Accordion) -->
+    <section class="section specs-section" id="specifications">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">معايير السلامة والاعتماد</span>
+                <h2 class="section-heading">كيف نضمن سلامة الإعاشات وجودتها؟</h2>
+                <div class="header-line"></div>
+                <p class="section-description">
+                    إجراءات صارمة تطبقها شركة سهل نجد الاقتصادية في كل شحنة توريد
+                </p>
+            </div>
+
+            <div class="quality-accordion-list">
+                
+                <details class="quality-item" open>
+                    <summary class="quality-summary">
+                        <div class="q-title">
+                            <span class="q-icon">🔬</span>
+                            <h4>الرقابة والفحص الصحي الصارم (SFDA)</h4>
+                        </div>
+                        <span class="chevron-q">▾</span>
+                    </summary>
+                    <div class="quality-body">
+                        <p>
+                            تخضع كافة المنتجات الموردة سواء اللحوم أو الدواجن أو الأجبان إلى فحص مخبري وتدقيق لشهادات المنشأ والصلاحية، ونلتزم التزاماً كاملاً بجميع لوائح واشتراطات الهيئة العامة للغذاء والدواء بالمملكة العربية السعودية لضمان أمان الغذاء بنسبة 100%.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="quality-item">
+                    <summary class="quality-summary">
+                        <div class="q-title">
+                            <span class="q-icon">❄️</span>
+                            <h4>سلسلة التبريد الذكية (Cold Chain Integrity)</h4>
+                        </div>
+                        <span class="chevron-q">▾</span>
+                    </summary>
+                    <div class="quality-body">
+                        <p>
+                            لا تتوقف عملية التبريد من لحظة استلام اللحوم والدواجن والأجبان وحتى تفريغها في مستودعات ومطابخ العميل. براداتنا مزودة بحساسات حرارية تسجل درجات الحرارة كل دقيقة لمنع أي تلف أو تغير في جودة الأغذية.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="quality-item">
+                    <summary class="quality-summary">
+                        <div class="q-title">
+                            <span class="q-icon">📄</span>
+                            <h4>مرونة العقود وتسهيلات السداد لقطاع الإعاشة</h4>
+                        </div>
+                        <span class="chevron-q">▾</span>
+                    </summary>
+                    <div class="quality-body">
+                        <p>
+                            نقدم خطط تعاقد سنوية ونصف سنوية ميسرة لشركات الإعاشة والمقاولات، مع إمكانية التوريد بالآجل وفق دراسات ائتمانية مرنة تدعم استمرارية المشاريع دون ضغوط تدفقات نقدية.
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم معلومات التواصل (Contact Section) -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">معلومات التواصل</span>
+                <h2 class="section-heading">تواصل مع شركة سهل نجد الاقتصادية</h2>
+                <div class="header-line"></div>
+                <p class="section-description">
+                    يسعدنا استقبال استفساراتكم واحتياجاتكم عبر قنوات التواصل الرسمية والمباشرة
+                </p>
+            </div>
+
+            <!-- بطاقات التواصل والبيانات الرسمية -->
+            <div class="contact-cards-grid">
+                <div class="contact-info-card">
+                    <div class="info-icon">🏢</div>
+                    <div class="info-details">
+                        <h4>المقر الرئيسي</h4>
+                        <p>المملكة العربية السعودية — الرياض</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="info-icon">📞</div>
+                    <div class="info-details">
+                        <h4>قسم التوريد والإعاشة</h4>
+                        <p>خدمة العملاء والتعاقدات: <a href="tel:0551211697" style="color: inherit; text-decoration: none; font-weight: 700; direction: ltr; display: inline-block;">0551211697</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-details">
+                        <h4>البريد الإلكتروني</h4>
+                        <p>supply@sahlnajd.com / info@sahlnajd.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="info-icon">🚛</div>
+                    <div class="info-details">
+                        <h4>عمليات النقل والتوزيع المبرد</h4>
+                        <p>خدمة وجاهزية على مدار الساعة طوال أيام الأسبوع</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر الرسمي (Footer) -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo-row">
+                    <!-- رابط صورة الشعار المباشر -->
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Ccircle cx='150' cy='150' r='144' fill='%23ffffff' stroke='%233a1065' stroke-width='6'/%3E%3Ccircle cx='150' cy='150' r='116' fill='%234a1584'/%3E%3Cpath d='M110 195 L145 105 L155 105 L190 195 L172 195 L150 138 L128 195 Z' fill='%23ffffff'/%3E%3Cpath d='M70 170 Q145 220 230 115 Q170 168 70 170 Z' fill='%23ffffff'/%3E%3Ctext x='150' y='52' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='14' fill='%233a1065'%3Eشركة سهل نجد الاقتصادية%3C/text%3E%3Ctext x='150' y='265' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='10' fill='%233a1065'%3ESAHL NAJD ECONOMIC CO.%3C/text%3E%3C/svg%3E" 
+                         alt="شعار شركة سهل نجد الاقتصادية" 
+                         class="footer-logo"
+                         onerror="this.src='logo.jpg'">
+                    <div>
+                        <h3>شركة سهل نجد الاقتصادية</h3>
+                        <span>SAHL NAJD ECONOMIC CO. — REFRIGERATED TRANSPORT</span>
+                    </div>
+                </div>
+                <p class="footer-about">
+                    المتخصصون في توريد وتصدير الإعاشات الغذائية، اللحوم والدواجن المبردة، السكر والمكرونات، والأجبان، مع خدمات النقل المبرد المعتمدة في كافة أنحاء المملكة.
+                </p>
+            </div>
+
+            <div class="footer-nav">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="#about">نبذة عن الشركة</a></li>
+                    <li><a href="#fleet">أسطول البرادات المبردة</a></li>
+                    <li><a href="#products">أصناف الإعاشات الغذائية</a></li>
+                    <li><a href="#clients">مع مَن نتعامل؟</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-services">
+                <h4>أصناف التوريد</h4>
+                <ul>
+                    <li><a href="#meat">لحوم مبردة ومجمدة</a></li>
+                    <li><a href="#poultry">دواجن مبردة ومجمدة</a></li>
+                    <li><a href="#dairy">أجبان وألبان</a></li>
+                    <li><a href="#pasta">مكرونة وبقوليات</a></li>
+                    <li><a href="#sugar">سكر وتموين أساسي</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-content">
+                <p>جميع الحقوق محفوظة © 2026 شركة سهل نجد الاقتصادية — SAHL NAJD ECONOMIC CO.</p>
+                <p class="en-copy">FOOD SUPPLY & REFRIGERATED LOGISTICS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- سكريبت القوائم المنسدلة والتحديث التلقائي لشريط الصفحات عند التمرير (ScrollSpy) -->
+    <script>
+        // ==========================================
+        // 1. مراقبة التمرير وتحديث العنصر النشط في شريط الصفحات تلقائياً (ScrollSpy)
+        // ==========================================
+        const navLinks = document.querySelectorAll('.nav-list > .nav-item > .nav-link');
+        const sectionsData = [
+            { id: 'hero', nav: document.querySelector('.nav-link[href="#hero"]') },
+            { id: 'about', nav: document.querySelector('.nav-link[href="#about"]') },
+            { id: 'fleet', nav: document.querySelector('.nav-link[href="#about"]') }, // تابع لقسم عن الشركة
+            { id: 'products', nav: document.querySelector('.nav-link[href="#products"]') },
+            { id: 'clients', nav: document.querySelector('.nav-link[href="#clients"]') },
+            { id: 'specifications', nav: document.querySelector('.nav-link[href="#specifications"]') },
+            { id: 'contact', nav: document.querySelector('.nav-link[href="#contact"]') }
+        ];
+
+        function updateScrollSpy() {
+            const scrollY = window.scrollY;
+            const scrollPos = scrollY + 140; // إزاحة لتحديد السيكشن المعروض بدقة أسفل القائمة
+            const navbar = document.querySelector('.main-navbar');
+
+            // إضافة تأثير للشريط عند النزول
+            if (navbar) {
+                if (scrollY > 30) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+
+            // إذا وصل الزائر لأسفل الصفحة، قم بتفعيل "تواصل معنا"
+            if ((window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 70)) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                const contactLink = document.querySelector('.nav-link[href="#contact"]');
+                if (contactLink) contactLink.classList.add('active');
+                return;
+            }
+
+            let currentNav = sectionsData[0].nav;
+
+            for (let i = 0; i < sectionsData.length; i++) {
+                const sectionEl = document.getElementById(sectionsData[i].id);
+                if (sectionEl) {
+                    const top = sectionEl.offsetTop;
+                    const height = sectionEl.offsetHeight;
+                    if (scrollPos >= top && scrollPos < (top + height)) {
+                        currentNav = sectionsData[i].nav;
+                    }
+                }
+            }
+
+            // تحديث الصنف النشط (active)
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (currentNav) {
+                currentNav.classList.add('active');
+            }
+        }
+
+        // الاستماع لحركة التمرير والتحميل
+        window.addEventListener('scroll', updateScrollSpy, { passive: true });
+        window.addEventListener('load', updateScrollSpy);
+        updateScrollSpy();
+
+        // ==========================================
+        // 2. تفعيل القائمة وزر الجوال مع طبقة التعتيم الخلفية
+        // ==========================================
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navBackdrop = document.getElementById('navBackdrop');
+
+        function toggleMobileMenu(forceState) {
+            const isOpen = forceState !== undefined ? forceState : !navMenu.classList.contains('open');
+            navMenu.classList.toggle('open', isOpen);
+            menuToggle.classList.toggle('active', isOpen);
+            if (navBackdrop) navBackdrop.classList.toggle('active', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => toggleMobileMenu());
+            if (navBackdrop) {
+                navBackdrop.addEventListener('click', () => toggleMobileMenu(false));
+            }
+
+            document.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-menu a').forEach(link => {
+                link.addEventListener('click', () => toggleMobileMenu(false));
+            });
+        }
+
+        // تفعيل القوائم المنسدلة في الجوال عند اللمس
+        document.querySelectorAll('.has-dropdown .dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    const parent = toggle.closest('.has-dropdown');
+                    parent.classList.toggle('dropdown-open');
+                }
+            });
+        });
+
+        // ==========================================
+        // 3. التحقق الاحتياطي الذكي من الصور
+        // ==========================================
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    if (!this.dataset.triedLocal) {
+                        this.dataset.triedLocal = 'true';
+                        if (this.classList.contains('brand-logo') || this.classList.contains('footer-logo')) {
+                            this.src = 'logo.jpg';
+                        } else if (this.classList.contains('truck-hero-img') || this.classList.contains('fleet-full-img')) {
+                            this.src = 'truck.jpg';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
